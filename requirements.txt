@@ -1,0 +1,8 @@
+gymnasium[classic-control]==0.29.1
+stable-baselines3==2.3.2
+torch
+optuna==3.6.1
+numpy
+pandas
+matplotlib
+tqdm
