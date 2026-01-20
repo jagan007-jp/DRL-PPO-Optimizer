@@ -53,31 +53,29 @@ python src/evaluate_seeds.py
 python src/plot_results.py
 ```
 
-# Create and activate venv
+## Full run checklist (copy/paste)
+
+```bash
+cd "/Users/jaganprasathj/Desktop/CIP/Optimized DRL/drl-ppo-optimizer"
+
 python3 -m venv .venv
 source .venv/bin/activate
 
-# Install dependencies
 python -m pip install -r requirements.txt
 
-# (Optional) quick smoke test
 python src/train_baseline.py --env_id CartPole-v1 --timesteps 5000 --seed 0
 
-# Baseline training
 python src/train_baseline.py --env_id CartPole-v1 --timesteps 80000 --seed 42
 python src/train_baseline.py --env_id Acrobot-v1 --timesteps 120000 --seed 42
 
-# Vectorized training
 python src/train_vectorized.py --env_id CartPole-v1 --timesteps 80000 --n_envs 8 --seed 42
 python src/train_vectorized.py --env_id Acrobot-v1 --timesteps 120000 --n_envs 8 --seed 42
 
-# Optuna tuning (CartPole-v1)
 python src/tune_optuna.py --n_trials 30 --timesteps_per_trial 30000 --seed 42
 
-# Multi-seed evaluation + plots
 python src/evaluate_seeds.py
 python src/plot_results.py
-
+```
 
 ## What "optimized" means here
 
